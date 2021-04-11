@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import base_api from './const'
+import './App.css';
 import {
     Link
   } from "react-router-dom";
@@ -44,16 +45,16 @@ function Home(props) {
     console.log(filteredData);
     
     return (
-      <div>
+      <div className="content-div">
         <h2>Episodios temporada {number}</h2>
-        <ul>
+        <div>
             {filteredData.map((episode) =>
-                <li key={episode.episode_id}>
-                    <Link to={"/episode/" + episode.episode_id}>{"Titulo: " + episode.title}</Link>
-                </li>
+                <div>
+                    <Link to={"/episode/" + episode.episode_id}>{"Capítulo número "+ episode.episode + " : " + episode.title}</Link>
+                </div>
             )}
 
-        </ul>
+        </div>
       </div>
     );
   }

@@ -8,7 +8,7 @@ const SearchList = ({searchList=[], input}) => {
   if (input) {
   return (
     <>
-    <ul>
+    <div className="search-list">
     { searchList.map((data,index) => {
         if (data) {
           const character_name = data.name.replace(' ', '+')
@@ -16,15 +16,13 @@ const SearchList = ({searchList=[], input}) => {
           char_count += 1;
           return (
             <div>    
-                <li key={char_count}>
-                    <Link to={link}>{data.name}</Link>
-                </li>
-	        </div>	
+                  <Link to={link}>{data.name}</Link>
+	          </div>	
     	   )	
     	 }
     	 return null
     }) }
-    </ul>
+    </div>
     </>
   );}
   return null;

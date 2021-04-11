@@ -23,7 +23,7 @@ function App() {
 }
 
 export default App; */
-
+import './App.css';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -35,6 +35,7 @@ import Home from './Home';
 import Character from './Character';
 import Season from './Season';
 import Episode from './Episode';
+import SearchComponent from './SearchComponent'
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -47,20 +48,15 @@ import Episode from './Episode';
 
 export default function BasicExample() {
   return (
+
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
-
+        <div className="Header-div">
+          <div className='pagina-inicio'>
+          <Link to="/">Página de inicio</Link>
+          </div>
+          <SearchComponent />
+        </div>
         <hr />
 
         {/*
@@ -73,12 +69,6 @@ export default function BasicExample() {
         <Switch>
           <Route exact path="/">
             <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
           </Route>
           <Route path="/characters/:name">
             <Character />
@@ -97,19 +87,3 @@ export default function BasicExample() {
 
 // You can think of these components as "pages"
 // in your app.
-
-function About(props) {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Dashboard(props) {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
-  );
-}

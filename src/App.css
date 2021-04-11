@@ -28,6 +28,36 @@
   color: #61dafb;
 }
 
+.Header-div {
+  margin-top: 2%;
+  text-align: -webkit-center;
+
+}
+
+.content-div {
+  margin-top: 2%;
+  text-align: -webkit-center;
+  background-color: ghostwhite;
+  margin-left: 25%;
+  margin-right: 25%;
+  border: 1px solid black;
+  padding-bottom: 2%;
+}
+
+
+.search-list {
+  margin-top: 2%;
+  text-align: -webkit-center;
+  background-color: ghostwhite;
+  margin-left: 25%;
+  margin-right: 25%;
+  border: 1px solid black;
+}
+
+.pagina-inicio {
+  margin-bottom: 2%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

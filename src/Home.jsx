@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import base_api from './const'
-import SearchComponent from './SearchComponent'
+import './App.css';
 import {
   Link
 } from "react-router-dom";
@@ -67,31 +67,24 @@ function Home(props) {
     // empty dependency array means this effect will only run once (like componentDidMount in classes)
   
     return (
-      <div>
-        <SearchComponent />
-        <h1> Temporadas Breaking Bad </h1>
-        <ul>
-            {temporadas.map((temporada) => 
-                <li key={temporada}>
-                    <h2>Temporada numero {temporada}</h2>
-                    <Link to={"/season/Breaking+Bad/" + temporada}>{"Temporada numero " + temporada}</Link>
-                    
-                </li>
-            
-            )}
+      <div className="content-div">
+          <h1> Temporadas Breaking Bad </h1>
+          <div>
+              {temporadas.map((temporada) => 
+                <div>
+                  <Link to={"/season/Breaking+Bad/" + temporada}>{"Temporada número " + temporada}</Link>
+                </div>
+              )}
 
-        </ul>
-        <h1> Temporadas Better Call Saul </h1>
-        <ul>
-            {temporadasBCS.map((temporada) => 
-                <li key={temporada}>
-                    <h2>Temporada numero {temporada}</h2>
-                    <Link to={"/season/Better+Call+Saul/" + temporada}>{"Temporada numero " + temporada}</Link>
-                </li>
-            
-            )}
-
-        </ul>
+          </div>
+          <h1> Temporadas Better Call Saul </h1>
+          <div>
+              {temporadasBCS.map((temporada) => 
+                  <div>
+                    <Link to={"/season/Better+Call+Saul/" + temporada}>{"Temporada número " + temporada}</Link>
+                  </div>
+              )}
+          </div>
       </div>
     );
   }

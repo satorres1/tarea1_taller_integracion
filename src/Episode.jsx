@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import base_api from './const'
+import moment from 'moment';
+import './App.css';
 import {
     Link
   } from "react-router-dom";
@@ -30,23 +32,23 @@ function Episode(props) {
     }, []);
 
     return (
-      <div>
+      <div className="content-div">
         <h2>Titulo: {data.title}</h2>
         <h2>Temporada: {data.season}</h2>
         <h2>Episodio: {data.episode}</h2>
-        <h2>Fecha de estreno: {data.air_date}</h2>
+        <h2>Fecha de estreno: {moment(data.air_date).add(1,'days').format('DD-MM-YYYY')}</h2>
         <h2>Personajes:</h2>
-        <ul>
+        <div>
           {data.characters && data.characters.map((character) => {
             char_count += 1;
             const link = "/characters/" + character;
             return (
-              <li key={char_count}>
+              <div>
                 <Link to={link}>{character}</Link>
-              </li>
+              </div>
             );
           })}
-        </ul>
+        </div>
       </div>
     );
   }
